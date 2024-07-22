@@ -12,9 +12,9 @@ function App() {
   return (
   
       <main>
-        <Container maxWidth='sm'>
+        <Container maxWidth='xl'>
             <Stack direction='row' gap={2} alignItems='center' justifyContent='center'>
-          <Typography variant='h2' component='h1'>
+          <Typography variant='h3' component='h1'>
               TRIVIA BATTLE 2024 HANDOUT
           </Typography>
             </Stack>
