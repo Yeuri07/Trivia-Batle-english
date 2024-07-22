@@ -18,7 +18,7 @@ const getBackgroundColor = (info: QuestionType, index: number) =>{
     return 'transparent'
 }
 
-const Question = ({info}: { info: QuestionType}) =>{
+const Question = ({info }: { info: QuestionType}) =>{
     const selectAnswer = useQuestionsStore(state => state.selectAnswer)
 
     const createHandleClick = (answerIndex: number) => () => {
@@ -38,6 +38,7 @@ const Question = ({info}: { info: QuestionType}) =>{
                         <ListItemButton
                         disabled={info.userSelectedAnswer != null}
                         onClick={createHandleClick(index)}
+                        onTouchStart={createHandleClick(index)}
                         sx={{backgroundColor: getBackgroundColor(info, index)}}>
                             <ListItemText primary={answer} sx={{textAlign:'center'}}/>
                         </ListItemButton>
@@ -50,7 +51,6 @@ const Question = ({info}: { info: QuestionType}) =>{
 
 export const Inicio = () =>{
     const questions = useQuestionsStore(state => state.questions)
-    console.log(questions)
     const currentQuestion = useQuestionsStore(state => state.currentQuestion)
     const nextQuestion = useQuestionsStore(state => state.nextQuestion)
     const previousQuestion = useQuestionsStore(state => state.previousQuestion)
