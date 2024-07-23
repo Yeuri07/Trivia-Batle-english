@@ -14,6 +14,30 @@ interface State {
     reset: () => void
 }
 
+
+const shuffleAnswers = (questions: Question[]): Question[] => {
+    return questions.map(item => {
+        const answers = [...item.answers];
+        const correctAnswer = item.correctAnswer;
+
+        // Mezclar las respuestas
+        for (let i = answers.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [answers[i], answers[j]] = [answers[j], answers[i]];
+        }
+
+        // Encontrar el nuevo índice de la respuesta correcta
+        const newCorrectAnswer = answers.indexOf(item.answers[correctAnswer]);
+
+        // Retornar el nuevo objeto con las respuestas mezcladas y el nuevo índice de la respuesta correcta
+        return {
+            ...item,
+            answers: answers,
+            correctAnswer: newCorrectAnswer,
+        };
+    });
+};
+
 export const useQuestionsStore = create<State>()(persist((set, get) => {
     return {
 
@@ -25,7 +49,9 @@ export const useQuestionsStore = create<State>()(persist((set, get) => {
             
             const json = await res.json()
            
-            const questions = json.sort(()=> Math.random() - 0.5).slice(0,limit)
+            let questions = json.sort(()=> Math.random() - 0.5).slice(0,limit)
+            questions = shuffleAnswers(questions) 
+
             set({questions})
         },
 
