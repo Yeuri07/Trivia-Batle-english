@@ -470,17 +470,6 @@
         "correctAnswer": 0
     },
     {
-        "id": 42,
-        "question": "Who wrote 'Romeo and Juliet'?",
-        "answers": [
-            "William Shakespeare",
-            "Charles Dickens",
-            "Jane Austen",
-            "Mark Twain"
-        ],
-        "correctAnswer": 0
-    },
-    {
         "id": 56,
         "question": "What is the longest river in the world?",
         "answers": [
