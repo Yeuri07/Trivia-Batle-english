@@ -2,7 +2,7 @@ import { Button } from "@mui/material"
 import { useQuestionsStore } from "./store/questions"
 
 
-const LIMIT_QUESTIONS = 30
+const LIMIT_QUESTIONS = 50
 
 export const Start = () =>{
  const fetchQuestions = useQuestionsStore(state => state.fetchQuestions)
