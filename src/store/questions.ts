@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { type Question } from "../types";
 import { persist } from "zustand/middleware";
-
+import confetti from 'canvas-confetti'
 
 
 interface State {
@@ -37,7 +37,7 @@ export const useQuestionsStore = create<State>()(persist((set, get) => {
             const questionInfo = newQuestions[questionIndex]
             
             const isCorrectUserAnswer = questionInfo.correctAnswer === answerIndex
-            
+            if(isCorrectUserAnswer) confetti()
             newQuestions[questionIndex] = {
                 ...questionInfo,
                 isCorrectUserAnswer,
