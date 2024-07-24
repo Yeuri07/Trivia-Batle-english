@@ -301,7 +301,7 @@
     },
     {
         "id": 26,
-        "question": "What is the longest river in the world?",
+        "question": "Who wrote `To Kill a Mockingbird`?",
         "answers": [
             "Harper Lee",
             "John Steinbeck",
@@ -466,17 +466,6 @@
             "Dollar",
             "Euro",
             "Pound"
-        ],
-        "correctAnswer": 0
-    },
-    {
-        "id": 56,
-        "question": "What is the longest river in the world?",
-        "answers": [
-            "Nile",
-            "Amazon",
-            "Yangtze",
-            "Mississippi"
         ],
         "correctAnswer": 0
     },
@@ -1095,7 +1084,7 @@
             "Carlos Teo Cruz",
             "Agapito Sánchez"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 0
     },
     {
         "id": 141,
